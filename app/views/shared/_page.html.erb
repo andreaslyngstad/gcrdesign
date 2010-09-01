@@ -1,0 +1,9 @@
+
+
+<li>
+ <%= link_to_unless_current(page.navlabel, view_page_path(page.name))%>
+  <% if page.children? and @page.name == page.name or page.all_children.include?(@page) %>
+    <ul><%= render :partial => 'shared/page', :collection => page.children %></ul>
+  <% end %>  
+</li>
+

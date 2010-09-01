@@ -1,0 +1,23 @@
+<% @page_title = "Logg inn"%>
+<%= flash[:notice] %>
+<%= flash[:error] %>
+
+
+
+
+<% form_tag session_path do -%>
+<ul class="form_layout">
+<li><%= label_tag 'Brukernavn' %><%= text_field_tag 'login', @login %></li>
+
+<li><%= label_tag 'Passord' %><%= password_field_tag 'password', nil %></li>
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+
+<li><label>&nbsp;</label><%= submit_tag 'Logg inn',:class => 'submit' %></li>
+</ul>
+<% end -%>
+
+

@@ -1,0 +1,55 @@
+
+<h1>Alle Brukere</h1>
+
+
+
+
+<table class="table_regular_adm" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>Fornavn</th>
+			<th>Etternavn</th>
+			<th>E-post</th>
+			<th>Brukernavn</th>
+			<th></th>
+		</tr>
+
+	<% for user in @users %>
+	 <tr>
+		 <td><%= truncate(h(user.first_name), :length => 17) %></td>
+		 <td><%= truncate(h(user.last_name), :length => 17) %></td>
+		 <td><%= mail_to(h(user.email), truncate(h(user.email), :length => 17)) %></td>
+		 <td><%= truncate(h(user.login), :length => 17) %></td>
+		 <td>
+		 	<%if @users.length > 1%>
+		 	<%= link_to 'Slett', user, :confirm => 'Er du sikker på at du vil slette denne brukeren?', :method => :delete %>
+			<% end %>
+		 	<%= link_to 'Oppdater', :action => 'index', :id => user %>
+		 </td>
+	  </tr>
+	  <% end %>
+</table>
+		
+
+
+
+<% if params[:id].blank? %>
+	<h2>Ny Bruker</h2>
+	
+	<% form_for :user, :url => users_path do |f| -%>
+	<%= error_messages_for :user %>
+	<ul class="form_layout">	
+		<%= render( :partial => "form", :locals => {:f => f})%>
+		<li><label>&nbsp;</label><%= f.submit('Lagre',:class => 'submit') %></li>
+	</ul>	
+	<% end -%>
+<% else -%>
+	<h2>Oppdater Bruker</h2>
+	
+	<% form_for(:user, @user, :url => {:action => "index", :id => @user} ) do |f| -%>
+	<%= f.error_messages %>
+	<ul class="form_layout">	
+		<%= render(:partial => 'form', :locals => {:f => f})%>
+		<li><label>&nbsp;</label><%= f.submit('oppdater',:class => 'submit')%></li>
+	</ul>
+	<% end -%>
+<% end -%>	

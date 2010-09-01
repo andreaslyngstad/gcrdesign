@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Grinakervev: <%= @page_title %></title>
+  
+  <%= stylesheet_link_tag 'public' %>
+  <%= javascript_include_tag :defaults	%>
+</head>
+<body>
+	<%= flash[:notice] %>
+		<p style="color: red"><%= flash[:error] %></p>
+<div id="header">
+	<div id="login_form_text">
+			
+		</div>
+		<div id="header_wrapper"> 
+		<%if logged_in?%>
+			<p style="font-family:courier new; color:red; font-size:12px">Hei <%= current_user.first_name %>! Du er innlogget.</p> 
+				<span style="font-family:courier new; color:red; font-size:15px"><%= link_to "Logg ut","/logout" %> | 
+				<%= link_to( "Til CMS", view_cms_path) %></span>
+			<%end%>
+		</div>
+		<div id="menu">
+		<% if @page.parent.nil? %>
+		<%= public_nested Page.roots %>	
+		<% else %>
+
+		<% if !@page.parent.nil?%>
+		<%= children_nested(@page.children)%>
+		<%else%>
+		<% if @page.level > 1%>
+		<%= siblings_nested(@page.parent.self_and_siblings)%>
+		<% else%>
+		<%= siblings_nested(@page.self_and_siblings) %>
+		<%end%>
+		<%end%>
+		<%end%>
+	
+</div>
+<div id="content">
+	<div id="content_wrapper">	
+		<%= yield  %>
+		<div style="clear:both;"></div>
+	</div>
+	
+</div>
+<!-- start footer -->
+
+</body>
+
+</html>

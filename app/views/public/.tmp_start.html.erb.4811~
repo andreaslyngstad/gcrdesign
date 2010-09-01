@@ -1,0 +1,14 @@
+<% @page_title = @current_action%>
+
+<div id="content_l">					
+		
+		
+		
+</div>
+<div id="content_r_r">
+<div id="content_r">
+<h1>Velkommen</h1> 
+<p>For å komme i gang må du logge deg inn. Det gjør du ved å trykke  <blink><%= link_to "HER", view_cms_path %></blink></p>
+		
+</div>
+</div>

@@ -1,0 +1,17 @@
+<div id="content_l">
+<% if !@page.nil?%>
+	<h1><%=h @page.title %></h1>
+	<p><%= @page.body %></p>
+<%end-%>
+</div>
+
+<div id="content_r">
+	<h2>Sider</h2>
+		
+	<%= nested_set_list_for Page.roots %>
+	<p><%= link_to 'Ny side', new_page_path %></p>
+</div>
+
+	
+  
+ 

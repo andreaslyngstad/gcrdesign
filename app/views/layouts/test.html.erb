@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		
+				<title>Admin<%= ": " + @page_title if @page_title%></title>
+				<meta name="keywords" content="" />
+<meta name="description" content="" />
+		<%= stylesheet_link_tag 'admin' %>
+		
+  	
+
+  		
+	</head>
+	
+	
+	<body>
+<!-- start header -->
+<div id="header">
+	<div id="header_wrapper">
+		<div id="login_form">
+			
+		</div>
+	
+	  </div>
+	</div>
+</div>
+	
+	
+	
+
+<!-- end header -->
+<!-- start page -->
+
+	<div id="content">
+	<div id="content_wrapper">
+		<%= flash[:notice] %>
+		<p style="color: red"><%= flash[:error] %></p>
+		<%= yield  %>
+			
+		<div style="clear:both;"></div>
+	</div>
+</div>
+	
+<!-- end page -->
+
+</body>
+
+</html>
+
+			
+	

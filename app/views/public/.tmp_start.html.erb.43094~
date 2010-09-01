@@ -1,0 +1,11 @@
+<% @page_title = @current_action%>
+
+<div id="content_l">					
+		
+		
+		
+</div>
+<div id="content_r">
+<h1>Grinakervev</h1> 
+		
+</div>

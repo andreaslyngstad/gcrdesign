@@ -1,0 +1,30 @@
+<h1>Velkommen</h1><br />
+
+<h3>Dette er baksiden av rubyonrails.no.</h3>
+
+<p>Denne siden skal være en portal for rubyonrails på norsk. I hovesak er den tenkt som en hjelp til nybegynnere, 
+men vi har også rom for "Rails for viderekommende" og "Profesjonelle railshackere". Du kan velge om blogginnlegg er en guide, video eller bare en post.
+Med guide menes en lengre post som forklarer en spesiell fremgangsmåte. Et eksempel kan være "Lag din første rails app". En post kan være "Sjekk hva 
+jeg har funnet ut om nested routes". Vi anbefaler <a href="http://www.jingproject.com/">Jing</a>, dersom du ønsker å lage en video.</p><br />
+
+
+
+<p>Her kan du:</p><br />
+<ul>
+<li>Lage innlegg i bloggen</li>
+<li>Legge til en kompis du syns bør være med</li> 
+<li>Lage nye statiske sider</li> 
+<li>Moderere kommentarer til bloggen</li>
+<li>Lese meldinger som er kommet inn til siden</li>
+</ul><br />
+<p>Vi har foreløpig valgt å gi alle brukere alle rettigheter. Derfor er det viktig å holde ting rett i munnen.</p><br />
+<ul>
+<li>Ikke post ting du vet ikke <em>vet</em> er riktig</li>
+<li>Ikke slett andre brukere</li>
+<li>Dersom du lager en bruker, skal du bruke hans/hennes virkelige navn</li>
+<li>Hvis du leser en melding, må du svare den som har skrevet det før du sletter meldingen</li>
+<li>Husk at det er tre typer blogginnlegg og at et ferdig innlegg må settes til offentlig</li>
+</ul>
+<br />
+<p>Vi ønsker oss et forum og et jobbmarked som <a href="http://railswork.com/">railswork</a>. Hvis noen vil lage det, kan dere ta kontakt med Torbjørn eller Andreas.</p>
+<p>Vi håper at flest mulig ønsker å bidra. Lykke til og tusen takk!</p>

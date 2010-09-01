@@ -1,0 +1,31 @@
+
+<% @page_title = @page.title %>
+
+
+
+
+	<% if @page.children.blank? and @page.parent.blank?%>
+	<div id="content_no_children">
+	<%= image_tag "grin2.png"%>
+	<%else %>
+	<div id="content_l">
+	<% if @page.parent.nil?%>
+	<%= children_nested(@page.children)%>
+	<%else%>
+	
+	<%= siblings_nested(@page.self_and_siblings) %>
+	<%end%>
+	<%end%>
+	
+	
+	
+	
+	
+</div>
+
+<div id="content_r">
+	<h1><%= @page.title %></h1>
+	<%= image_tag(@page.main_photo.url(:small))%>
+	<p><%= @page.body %></p>
+		
+</div>

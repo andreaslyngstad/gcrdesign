@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>GCRdesign: <%= @page_title %></title>
+  
+  <%= stylesheet_link_tag 'public' %>
+  <link rel="stylesheet" href="/stylesheets/lightbox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="javascripts/prototype.js"></script>
+        <script type="text/javascript" src="javascripts/effects.js"></script>
+        <script type="text/javascript" src="javascripts/builder.js"></script>
+        <script type="text/javascript" src="javascripts/lightbox.js"></script> 
+</head>
+<body>
+<div id="page">
+	<div id="content">
+<div id="header">
+	<%= flash[:notice] %>
+		<div id="header_wrapper">
+			 
+		<%if logged_in?%>
+		<div id="logged_in">
+			<p>Hei, <%= current_user.first_name %>! Du er innlogget.</p> 
+				<%= link_to "Logg ut","/logout" %> | 
+				<%= link_to( "Til CMS", view_cms_path) %>
+				</div>
+			<%end%>
+			
+		</div>		
+</div>
+
+
+
+	<div id="menu">
+		<ul><%= public_nested Page.roots %>	</ul>
+		
+		<% if @page.children.blank? and @page.parent.blank?%>
+		<div id="menu_low">
+			</div>
+	<%else %>
+	
+	<% if @page.parent.nil?%>
+	<div id="menu_low">
+	<%= children_nested(@page.children)%>
+	</div>
+	<%else%>
+	<% if @page.level > 1%>
+	<div id="menu_low">
+	<%= siblings_nested(@page.parent.self_and_siblings)%>
+	</div>
+	<% else%>
+	<div id="menu_low">
+	<%= siblings_nested(@page.self_and_siblings) %>
+	</div>
+	<%end%>
+	<%end%>
+	<%end%>
+	
+	</div>
+		<div id="content_l">
+		<%= yield  %>
+		</div>
+		
+		
+		
+		<div style="clear:both;"></div>
+	
+	
+	
+</div>
+<!-- start footer -->
+
+</body>
+
+</html>

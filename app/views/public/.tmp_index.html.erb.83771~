@@ -1,0 +1,16 @@
+<% @page_title = @page.title %>
+
+
+<div id="menu">
+	<%= public_nested Page.roots %>		
+</div>
+
+
+<div id="content_l">
+	<h1><%= @page.title %></h1>
+	<p><%= parse_coderay(@page.body) %></p>
+</div>
+
+<div id="content_r">
+	<%= render :partial => "shared/links" %>	
+</div>

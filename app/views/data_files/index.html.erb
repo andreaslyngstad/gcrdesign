@@ -1,0 +1,39 @@
+
+<% @page_title = "Bilder" -%>
+<h1>Bilder|<%= link_to "laste opp bilde", new_data_file_url, :style => "color: red"%></h1>
+<p>Administrer bilder</p>
+
+<div id="content_l">
+
+<table class="table_regular_adm" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>Bilde</th>
+			<th>Filnavn</th>
+					
+			
+			<th></th>
+			<th></th>
+		</tr>
+
+	<% for img in @images %>
+
+	<tr>
+	<th><%= image_tag(img.photo.url, :size => "75x75")%></th>
+	<th><%= img.photo_file_name %></th>
+	<% if img.use == false %>
+	<th><%= link_to 'Bruk', img, :method => :put%></th>
+	<% else %>
+	<th style="color: #33cc00" >... er i bruk ...</th>
+	<% end %>
+<th><%= link_to 'Slett', img, :confirm => 'Er du sikker på at du vil slette dette bildet?', :method => :delete %><th>
+	</tr>
+	<% end %>
+	
+	
+
+	
+	
+</table>
+</div>
+
+

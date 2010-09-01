@@ -1,0 +1,32 @@
+<% form_for(@page, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+  
+    <ul class="form_layout_adm_l">
+    <li><label>&nbsp;</label><%= f.submit "Lagre",:class => 'submit' %></li>	
+	<li><%= f.label :navn %></li>  
+    <li><%= f.text_field :name, :size => 80, :style => "font-size: 1.5em"%></li> 
+	<li><%= f.label :tittel %></li>    
+	<li><%= f.text_field :title %></li>
+	<li><%= f.label :Velg_forelder %></li>
+	
+  	<li><span id="selecter_parent">
+		<%= f.select :proposed_parent_id, 
+		@page.available_parents.map{|page| [padded_page_name(page,2,"-"), page.id]}, :include_blank => true %>
+	</span></li>
+	<li><%= f.label :Link_til_denne_siden %></li>
+	<li><%= f.text_field :navlabel  %></li>
+	<span id=nav_photo>
+	<li><%= f.label :Bilde_til_link %></li>
+	<li><%= f.file_field :nav_photo %></li></span>
+	<%= link_to_function('bilde') do |page|
+		
+ 		page << "new Effect.toggle ('nav_photo')"	
+	end %>
+	
+    
+    <li><%= f.label :innhold %></li>   
+	<li><%= fckeditor_textarea('page', 'body', :toolbarSet => 'Easy', :width => '100%', :height => '500px')%></li>
+		  
+	<li><label>&nbsp;</label><%= f.submit "Lagre",:class => 'submit' %></li></ul>  
+	
+<% end %>

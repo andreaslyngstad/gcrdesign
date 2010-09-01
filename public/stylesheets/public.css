@@ -1,0 +1,74 @@
+
+html,body						{margin:0;padding:0;font-family:georgia;font-size:12px;height:100%;}
+h1								{	}
+h2								{font-family:georgia;font-size:20px;color: #C2AE68;}
+h2 a							{text-decoration:none;color:#000}
+a								{text-decoration:none;color:#fff}
+a:hover							{color:#85a5f0}
+ul,ol							{padding:0px 0px 0px 30px;}
+
+#page  {float:left; width: 100%;height:100%; background: #401e6c; }
+
+#header							{ border: 1px solid #766498; width: 100%; height:250px;background: #401e6c url(../images/logo-3.png) no-repeat;; }
+#header_wrapper		 			{ width: 100%;height:251px; margin-left: 30px;}
+#content						{margin-left:auto;
+                     margin-right:auto;
+                     width: 980px;
+                     }
+#content_wrapper ul li	{list-style:none; }
+#logged_in {padding:20px 20px 20px 20px;		
+      			margin-top: 20px;
+      			float: right;
+      			background: rgba(50, 50, 50, 250.246094);
+      			text-align:center;
+      			}
+      			
+#title      {color: #9C850F;
+        		font-size: 20px;
+        		letter-spacing: +4px;
+        		margin: 0px 0px 23px 0px;
+        		text-align:center;
+        		}
+
+#content_l	{float: right;
+		        margin-left: 20px;
+    				width: 710px;
+    				font-size: 1.5em;
+        		}
+#content_l	a   {font-size: 1em;}
+#content_l img {border: 1px solid rgb(128, 128, 128);margin:10px 10px 10px 10px ;}
+#content_l #text {
+          color: #766498;
+					font-size: 15px;
+					line-height: 25px;
+					padding: 20px 20px 1px;}
+					
+#menu {	
+        float: left; 
+		    width:245px;
+		    height:110%;
+	      font-family:georgia;
+    		font-size:2em; 
+    		padding: 20px 0px 20px 0px;
+    		background: #401e6c;
+    			}
+#menu ul {list-style: none; margin: 0;}
+#menu li {padding: 10px 10px 10px 10px;}
+#menu a {color:  #766498;}	
+#menu ul li ul li  { font-size:17px; padding: 5px 5px 5px 0px;}		
+#menu a:hover {color: #85a5f0; }  
+#menu {color: #9C850F;}
+#menu_low {font-size: 0.6em; }
+/* Footer styles */
+	#footer {
+		clear:both;
+		float:left;
+		width:100%;
+		border-top:1px solid #000;
+	}
+	#footer p {
+		padding:10px;
+		margin:0;
+	}
+
+
