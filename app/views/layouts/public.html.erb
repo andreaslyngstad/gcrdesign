@@ -35,7 +35,7 @@
 <div id="content">
 
 	<div id="menu"> 
-	  <ul><%= render :partial => 'shared/page', :collection => Page.roots(nil) %></ul>
+	  <ul><%= render :partial => 'shared/page', :collection => @pages %></ul>
   </div>
 		<div id="content_l">	 
 		<%= yield  %>
@@ -43,7 +43,12 @@
 		</div>	
 </div>		
 		<div style="clear:both;"></div>
+		<div id="footer">
+		  <p>Kontakt Gunvor C. Røkholt design - telefon 91310460 - adresse Hoffsveien 27, 0275 Oslo - epost <a href="mailto:gunvor@gcrdesign.no">gunvor@gcrdesign.no</a></p>
+		  
+		</div>
 </div>
+
 </body>
 
 </html>

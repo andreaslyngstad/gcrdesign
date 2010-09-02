@@ -5,18 +5,11 @@ class PublicController < ApplicationController
   layout "public"
   
   def index 
-    @page = Page.find_by_name(params[:name], :include => [:parent])
+    @page = Page.find_by_name(params[:name])
+    @pages = Page.roots(nil)
     if @page.nil?
       redirect_to(:action => "start")
-    end
-    
-    DataFile.all.each do |img|
-      
-      if img.use == true 
-        @image = img.photo.url 
-      end
-    end
-    
+    end  
   end
   
   def start
