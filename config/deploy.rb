@@ -1,15 +1,31 @@
-set :application, "grinakervev"
-set :repository,  "set your repository location here"
+set :application, "gcrdesign.no"
+role :app, application
+role :web, application
+role :db,  application, :primary => true
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
+set :user, "teatercamp"
+set :use_sudo, false
+set :deploy_to, "/var/www/#{application}"
+set :deploy_via, :remote_cache
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
+set :scm, :git
+set :repository, "git://github.com/andreaslyngstad/gcrdesign.git"
+set :branch, "master"
 
-role :app, "your app-server here"
-role :web, "your web-server here"
-role :db,  "your db-server here", :primary => true
+
+namespace :deploy do
+  desc "Symlink shared configs and folders on each release."
+  task :symlink_shared do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"  
+    run "ln -nfs #{shared_path}/public/images #{release_path}/config/images"  
+  end
+  
+  desc "Restarting mod_rails with restart.txt"
+  task :restart do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+
+  
+  
+end
+after 'deploy:update_code', 'deploy:symlink_shared'
