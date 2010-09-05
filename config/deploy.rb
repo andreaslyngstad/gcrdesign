@@ -14,6 +14,10 @@ set :branch, "master"
 
 
 namespace :deploy do
+  [:start, :stop].each do |t|
+    desc "ignore #{t} since we are using passenger"
+    task t do ; end
+  end
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"  
