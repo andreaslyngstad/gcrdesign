@@ -21,7 +21,7 @@ namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"  
-    run "ln -nfs #{shared_path}/public/assets/pictures #{release_path}/public/assets/pictures"  
+     
     run "ln -nfs #{shared_path}/db/productin.sqlite3#{release_path}/db/productin.sqlite3"  
     run "ln -nfs #{shared_path}/public/uploads/Image #{release_path}/public/uploads/Image"  
   end
