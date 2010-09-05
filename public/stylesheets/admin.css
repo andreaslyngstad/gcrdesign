@@ -11,7 +11,7 @@
 #header_wrapper ul li a			{text-decoration:none;color:#fff;padding:5px 0px 5px 0px;margin-left:20px;font-weight:bold;}
 #header_wrapper ul li a:hover	{text-decoration:underline;}
 
-#content						{background:#fff url(../images/content_bg_admin.png) repeat-x;}
+#content						{background:#fff url( ../images/content_bg_admin.png) repeat-x;}
 #content_wrapper    			{width:960px;margin:0 auto;min-height:400px;height:auto!important;height:400px;padding:10px 0px 30px 0px;}
 #content_wrapper #content_l		{width:690px;clear:left;float:left;padding:10px 10px 10px 0px;border-right:1px solid #eaeaea;min-height:400px;height:auto!important;height:400px;}
 #content_wrapper #content_l p	{margin-bottom:10px;}
@@ -22,7 +22,7 @@
 
 #sub_nav ul 					{padding:15px 0px 15px 0px;}
 #sub_nav ul li					{list-style:none;}		
-#sub_nav ul li b				{display:block;background:url(../images/pil.png) no-repeat 0px; padding:3px 0px 3px 20px;color:#cc0000;font-weight:bold;}		
+#sub_nav ul li b				{display:block;background:url( ../images/pil.png) no-repeat 0px; padding:3px 0px 3px 20px;color:#cc0000;font-weight:bold;}		
 #sub_nav ul li a				{display:block;color:#000;font-weight:bold;}		
 #sub_nav ul li a:hover			{margin-left:5px;}		
 
@@ -32,7 +32,7 @@
 
 
 		
-#footer							{background:url(../images/footer_bg.png) repeat-x;}
+#footer							{background:url( ../images/footer_bg.png) repeat-x;}
 #footer_wrapper    				{width:960px;margin:0 auto;min-height:250px;height:auto!important;height:250px;}
 #footer_wrapper .boks			{float:left;width:310px;height:130px;padding:20px 10px 20px 0px;}
 #footer_wrapper #footer_text   	{color:#fff;font-size:11px;padding-top:20px;clear:both;}
