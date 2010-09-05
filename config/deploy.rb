@@ -17,7 +17,9 @@ namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"  
-    run "ln -nfs #{shared_path}/public/images #{release_path}/config/images"  
+    run "ln -nfs #{shared_path}/public/assets/pictures #{current_path}/public/assets/pictures"  
+    run "ln -nfs #{shared_path}/db/productin.sqlite3#{current_path}/db/productin.sqlite3"  
+    run "ln -nfs #{shared_path}/public/uploads/Image #{current_path}/public/uploads/Image"  
   end
   
   desc "Restarting mod_rails with restart.txt"
@@ -29,3 +31,4 @@ namespace :deploy do
   
 end
 after 'deploy:update_code', 'deploy:symlink_shared'
+after "deploy", "deploy:cleanup"
