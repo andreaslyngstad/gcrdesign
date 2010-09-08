@@ -62,8 +62,10 @@
         one: 'over 1 år'
         other: 'over {{count}} år'
                   
-  number:
-    format:
+  number: 
+    human_size: 
+     format: "{{number}} {{unit}}" 
+    format: 
       separator: ","
       delimiter: "."
       precision: 2

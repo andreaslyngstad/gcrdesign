@@ -1,6 +1,6 @@
 module CkeditorHelper
   def new_attachment_path_with_session_information(kind)
-    session_key = ActionController::Base.session_options[:key]
+    session_key = ActionController::Base.session_options[:session_key]
     
     options = {}
     controller = case kind
