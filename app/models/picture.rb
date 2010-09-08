@@ -1,7 +1,7 @@
 class Picture < Asset
   has_attached_file :data,
-                    :url  => "/uploads/Image/:id/:style_:basename.:extension",
-                    :path => ":rails_root/public/uploads/Image//:id/:style_:basename.:extension",
+                    :url  => "/system/photos/:id/:style_:basename.:extension",
+                    :path => ":rails_root/public/system/photos/:id/:style_:basename.:extension",
               :styles => { :content => '575>', :thumb => '100x100' }
 
 validates_attachment_size :data, :less_than => 2.megabytes
