@@ -42,7 +42,7 @@ ul,ol			{padding:0px 0px 0px 30px;}
 #content	 {min-height: 600px; height: auto!important;height: 100%;
             margin-left:auto;
             margin-right:auto;
-            width: 980px;
+            width: 990px;
                      }
 #content_wrapper ul li	{list-style:none; }
 #logged_in {padding:20px 20px 20px 20px;		
@@ -79,8 +79,8 @@ ul,ol			{padding:0px 0px 0px 30px;}
 					
 #menu {	
         float: left; 
-		    width:245px;
-    		font-size:1.5em; 
+		    width:255px;
+    		font-size:20px; 
     		font-weight:100;
     		padding: 20px 0px 20px 0px;
     		background: #401e6c;
