@@ -49,7 +49,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_irb_session',
+    :key => '_irb_session',
     :secret      => 'f61514ee72b1446af8ae36dfe6c486cea6612e37cf3945a723413ea093fed267679a60b59b0060c21ee632d91ea42f3c1aac2976f997abc571903d8dcbbcfb4a'
   }
   

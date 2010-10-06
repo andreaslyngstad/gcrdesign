@@ -5,35 +5,35 @@ namespace :ckeditor do
 
     directory = File.join(RAILS_ROOT, '/vendor/plugins/rails-ckeditor/')
     require "#{directory}lib/ckeditor"
-    require "#{directory}lib/ckeditor/version"
-    require "#{directory}lib/ckeditor/utils"
+    require "#{directory}lib/ckeditor_version"
+    require "#{directory}lib/ckeditor_file_utils"
   end
 
   desc 'Install the CKEditor components'
   task :install do
     setup
-    puts "** Installing CKEditor Plugin version #{Ckeditor::Version.current}..."
+    puts "** Installing CKEditor Plugin version #{CkeditorVersion.current}..."
 
-    Ckeditor::Utils.destroy_and_install
+    CkeditorFileUtils.destroy_and_install
 
-    puts "** Successfully installed CKEditor Plugin version #{Ckeditor::Version.current}"
+    puts "** Successfully installed CKEditor Plugin version #{CkeditorVersion.current}"
   end
 
   desc 'Uninstall the CKEditor components'
   task :uninstall do
     setup
-    puts "** Uninstalling CKEditor Plugin version #{Ckeditor::Version.current}..."
-    Ckeditor::Utils.destroy
+    puts "** Uninstalling CKEditor Plugin version #{CkeditorVersion.current}..."
+    CkeditorFileUtils.destroy
 
     puts "** Uninstalling Rails CKEditor Plugin Files..."
-    Ckeditor::Utils.rm_plugin
-    puts "** Successfully Uninstalled CKEditor Plugin version #{Ckeditor::Version.current}"
+    CkeditorFileUtils.rm_plugin
+    puts "** Successfully Uninstalled CKEditor Plugin version #{CkeditorVersion.current}"
   end
   
   desc "Generate configuration"
   task :config do
     directory = File.join(RAILS_ROOT, '/vendor/plugins/rails-ckeditor/')
-    require "#{directory}lib/ckeditor/config"
+    require "#{directory}lib/ckeditor_config"
     Ckeditor::Config.create_yml
   end
 
@@ -95,7 +95,7 @@ namespace :ckeditor do
     end
 
     puts "** Backing up existing CKEditor install to /public/javascripts/ckeditor_bck"
-    Ckeditor::Utils.backup_existing
+    CkeditorFileUtils.backup_existing
 
     puts "** Shifting files to /public/javascripts/ckeditor"
     FileUtils.cp_r File.join(RAILS_ROOT, "/tmp/ckeditor/"), File.join(RAILS_ROOT, "/public/javascripts/")
